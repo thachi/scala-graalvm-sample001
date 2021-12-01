@@ -4,4 +4,10 @@ sbt clean nativeImage
 
 PACKAGE_PATH=`find . -name scala-graalvm-sample001`
 
-$PACKAGE_PATH
+cp $PACKAGE_PATH ~/hello
+
+~/hello
+
+ls -lah ~/hello
+
+rm ~/hello

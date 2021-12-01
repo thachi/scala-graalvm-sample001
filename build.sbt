@@ -9,8 +9,12 @@ lazy val root = (project in file("."))
   .enablePlugins(NativeImagePlugin)
   .settings(
     name := "scala-graalvm-sample001",
-    libraryDependencies += scalaTest % Test,
+    libraryDependencies ++= Seq(
+      json4s,
+      scalaTest % Test
+    ),
     nativeImageJvm := "graalvm-java11",
+    nativeImageOptions ++= List("--no-fallback"),
     Compile / mainClass := Some("example.Hello")
   )
 
